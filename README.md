@@ -113,6 +113,18 @@ Exact commands should be added after the existing notebook has been separated in
 - Further validation is required before deployment in a production environment.
 - Model weights and the VeRI-776 dataset are not stored directly in the repository.
 
+
+## My Contributions
+
+My contributions to this project include:
+
+- Per-query AP analysis and hard-query identification
+- Construction of the focused training subset
+- Configuration and training of the specialised model
+- Dual-model evaluation and fusion workflow
+- Hyperparameter tuning and performance comparison
+- Experimental analysis and visualisation
+
 ## Acknowledgements
 
 This project builds on publicly available vehicle re-identification research and code. Any external repositories, pretrained models, datasets or implementations used in the project should be explicitly credited here, together with their original licences and citations.
