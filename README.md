@@ -61,8 +61,8 @@ The principal evaluation metric is mean Average Precision (mAP). Per-query AP is
 
 | Experiment | mAP | Improvement |
 |---|---:|---:|
-| Baseline model | Add verified result | — |
-| Dual-model approach | Add verified result | Approximately 3% |
+| Baseline model | Add verified result | 84.72% |
+| Dual-model approach | Add verified result | 87.77% |
 
 Replace the placeholders above with the exact results produced by the repository.
 
