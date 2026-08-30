@@ -40,7 +40,7 @@ vehicle-reid-hard-sample-fusion/
 ├── dark_image_train.txt
 ├── model.ipynb
 ├── ap_lt_0.8.csv
-├── vehicle_reid_itsc2023-main
+├── vehicle_reid_itsc2023-main 2
 │   ├── main.py
 │   ├── teste.py
 │   ├── ap_bin_counts.csv
@@ -54,10 +54,8 @@ The principal evaluation metric is mean Average Precision (mAP). Per-query AP is
 
 | Experiment | mAP | Improvement |
 |---|---:|---:|
-| Baseline model | 84.72%  | |
-| Dual-model approach | 87.77% | 3.05% |
-
-Replace the placeholders above with the exact results produced by the repository.
+| Baseline model | 84.72%  |-|
+| Dual-model approach | 87.77% | +3.05 percentage points |
 
 ## Technologies
 
@@ -79,48 +77,47 @@ The project uses the VeRI-776 vehicle re-identification benchmark. The dataset i
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/vehicle-reid-hard-sample-fusion.git
+git clone https://github.com/VK-bott/vehicle-reid-hard-sample-fusion.git
 cd vehicle-reid-hard-sample-fusion
 ```
 
 2. Create and activate a virtual environment.
 
-3. Install the required packages:
+3. Download and arrange the VeRI-776 dataset according to the documented folder structure.
 
-```bash
-pip install -r requirements.txt
-```
+4. Update the dataset paths in the YAML configuration files.
 
-4. Download and arrange the VeRI-776 dataset according to the documented folder structure.
-
-5. Update the dataset paths in the YAML configuration files.
-
-6. Run the baseline training and evaluation, followed by hard-sample mining and focused-model training.
+5. Run the baseline training and evaluation, followed by hard-sample mining and focused-model training.
 
 Exact commands should be added after the existing notebook has been separated into reproducible training, evaluation and analysis scripts.
 
 ## Limitations
 
-- Performance depends on the selected hard-query threshold and focused training subset.
-- The current experiments are evaluated on VeRI-776 and may not generalise directly to other datasets.
-- Further validation is required before deployment in a production environment.
-- Model weights and the VeRI-776 dataset are not stored directly in the repository.
-
-
-## My Contributions
-
-My contributions to this project include:
-
-- Per-query AP analysis and hard-query identification
-- Construction of the focused training subset
-- Configuration and training of the specialised model
-- Dual-model evaluation and fusion workflow
-- Hyperparameter tuning and performance comparison
-- Experimental analysis and visualisation
+- Firstly, the challenging model designed in this fusion mechanism is specifically for vehicle recognition under dim lighting and blurred conditions. However, other complex factors affect the accuracy of vehicle recognition in real-world scenarios. For example, occlusion, viewpoint misalignment, and low resolution etc. The current training data for the challenging model primarily addresses lighting and blur issues, improvements for other factors have not been validated. Therefore, while the applicability and accuracy of Model A have been greatly improved, it still has limitations for complex real-world scenarios and requires further improvement.
+- The second limitation is the constraint of computational resources and time. Limited computational resources and training time prevent us from performing large-scale hyperparameter tuning. Parameter tuning is crucial for the model, affecting its learning ability. Currently, our hyperparameters are derived from some of the literature we have read. The results show that our parameters significantly improve model performance. However, due to limitations, we cannot systematically tune our parameters. For example, random search or grid search require substantial computational resources and time, which to some extent limits the true potential of our model.
+- Third, overall performance improved during parameter tuning of the challenging model. But limitations in computational resources and time, we lacked ablation experiments for each parameter. In this model, we simultaneously tuned three key parameters such as learning rate, triplet margin, and batch size. Without conducting separate ablation experiments on these three parameters, we could not observe whether individual parameter changes significantly impacted model performance. Furthermore, the lack of parameter sensitivity analysis also made us difficult to observe any interaction effects between parameters. This makes the model somewhat lacking in interpretability.
 
 ## Acknowledgements
 
-This project builds on publicly available vehicle re-identification research and code. Any external repositories, pretrained models, datasets or implementations used in the project should be explicitly credited here, together with their original licences and citations.
+This project extends the open-source implementation of:
+
+Eurico Almeida, Bruno Silva and Jorge Batista, “Strength in Diversity:
+Multi-Branch Representation Learning for Vehicle Re-Identification,”
+IEEE ITSC 2023.
+
+Original implementation: [(https://github.com/videturfortuna/vehicle_reid_itsc2023)]
+
+## My Contributions
+
+My contributions include:
+
+- Per-query AP analysis and automated hard-query identification
+- Construction of a specialised low-light training subset
+- Training and configuration of the focused model
+- Dual-model inference and evaluation
+- Hyperparameter tuning and experimental comparison
+- AP-distribution analysis and visualisation
+ the project should be explicitly credited here, together with their original licences and citations.
 
 ## Author
 
