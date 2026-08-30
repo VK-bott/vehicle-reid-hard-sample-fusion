@@ -35,23 +35,16 @@ This project implements a performance-improvement workflow consisting of:
 ```text
 vehicle-reid-hard-sample-fusion/
 ├── README.md
-├── LICENSE
-├── requirements.txt
-├── .gitignore
-├── configs/
-│   ├── baseline.yaml
-│   └── focused_model.yaml
-├── notebooks/
-│   └── experiment_analysis.ipynb
-├── src/
-│   ├── train.py
-│   ├── evaluate.py
-│   ├── hard_sample_mining.py
-│   └── dual_model_inference.py
-├── results/
-│   ├── ap_bin_statistics.png
-│   ├── baseline_per_query_ap.csv
-│   └── dual_model_per_query_ap.csv
+├── config.yaml
+├── config_dark.yaml
+├── dark_image_train.txt
+├── model.ipynb
+├── ap_lt_0.8.csv
+├── vehicle_reid_itsc2023-main
+│   ├── main.py
+│   ├── teste.py
+│   ├── ap_bin_counts.csv
+├── ap_bin_statistics.png
 └── sample_data/
 ```
 
