@@ -89,7 +89,11 @@ cd vehicle-reid-hard-sample-fusion
 
 5. Run the baseline training and evaluation, followed by hard-sample mining and focused-model training.
 
-Exact commands should be added after the existing notebook has been separated into reproducible training, evaluation and analysis scripts.
+The main experimental workflow, including per-query AP analysis, hard-sample
+selection and dual-model evaluation, is documented in `model.ipynb`.
+
+The upstream MBR training and evaluation commands are available in
+`vehicle_reid_itsc2023-main 2/README.md`.
 
 ## Limitations
 
@@ -105,7 +109,8 @@ Eurico Almeida, Bruno Silva and Jorge Batista, “Strength in Diversity:
 Multi-Branch Representation Learning for Vehicle Re-Identification,”
 IEEE ITSC 2023.
 
-Original implementation: [(https://github.com/videturfortuna/vehicle_reid_itsc2023)]
+Original implementation:  
+[videturfortuna/vehicle_reid_itsc2023](https://github.com/videturfortuna/vehicle_reid_itsc2023)
 
 ## My Contributions
 
@@ -117,7 +122,7 @@ My contributions include:
 - Dual-model inference and evaluation
 - Hyperparameter tuning and experimental comparison
 - AP-distribution analysis and visualisation
- the project should be explicitly credited here, together with their original licences and citations.
+ 
 
 ## Author
 
